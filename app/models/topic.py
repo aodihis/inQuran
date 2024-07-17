@@ -8,4 +8,4 @@ class Topic(Base):
 
     en_title = Column(String, index=True)
     id_title = Column(String, index=True)
-    topic_verses = relationship("TopicVerse", back_populates="topic")
+    verse_topics = relationship("VerseTopic", back_populates="topic")

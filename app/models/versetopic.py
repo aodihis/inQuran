@@ -8,5 +8,5 @@ class VerseTopic(Base):
 
     topic_id = Column(Integer, ForeignKey('topic.id'))
     verse_id = Column(Integer, ForeignKey('verse.id'))
-    topic = relationship("Topic", back_populates="verse_topic")
-    verse = relationship("Verse", back_populates="verse_topic")
+    topic = relationship("Topic", back_populates="verse_topics")
+    verses = relationship("Verse", back_populates="topic")

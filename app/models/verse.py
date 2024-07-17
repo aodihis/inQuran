@@ -13,5 +13,5 @@ class Verse(Base):
     latin = Column(String, index=True)
     id_translation = Column(String, index=True)
     en_translation = Column(String, index=True)
-    surah = relationship("Surah", back_populates="ayahs")
-    topic_verses = relationship("VerseTopic", back_populates="verse")
+    surah = relationship("Surah", back_populates="verses")
+    topic = relationship("VerseTopic", back_populates="verses")
