@@ -1,4 +1,4 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, Integer, String, Table
 from sqlalchemy.orm import relationship
 from app.database.model import Base
 
@@ -14,4 +14,3 @@ class Verse(Base):
     id_translation = Column(String, index=True)
     en_translation = Column(String, index=True)
     surah = relationship("Surah", back_populates="verses")
-    topic = relationship("VerseTopic", back_populates="verses")

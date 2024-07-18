@@ -11,7 +11,7 @@ from app.config import config
 
 
 async def get_db_session() -> AsyncGenerator[AsyncSession, None]:
-    engine = create_async_engine(config.SQLALCHEMY_DATABASE_URI)
+    engine = create_async_engine(str(config.SQLALCHEMY_DATABASE_URI))
     factory = async_sessionmaker(engine)
     async with factory() as session:
         try:

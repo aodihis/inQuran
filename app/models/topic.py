@@ -1,6 +1,11 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Table, ForeignKey
 from sqlalchemy.orm import relationship
 from app.database.model import Base
+
+verse_topic = Table('verse_topic', Base.metadata,
+                    Column('topic_id', Integer, ForeignKey('topic.id'), primary_key=True),
+                    Column('verse_id', Integer, ForeignKey('verse.id'), primary_key=True)
+                    )
 
 
 class Topic(Base):
@@ -8,4 +13,4 @@ class Topic(Base):
 
     en_title = Column(String, index=True)
     id_title = Column(String, index=True)
-    verse_topics = relationship("VerseTopic", back_populates="topic")
+    verses = relationship('Verse', secondary=verse_topic, backref='topic')

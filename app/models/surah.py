@@ -12,4 +12,4 @@ class Surah(Base):
     id_translation = Column(String, index=True)
     en_translation = Column(String, index=True)
     revelation_type = Column(String)
-    verses = relationship("Verse", back_populates="surah")
+    verses = relationship("Verse", back_populates="surah", lazy='joined')

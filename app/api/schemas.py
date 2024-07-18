@@ -32,21 +32,18 @@ class Surah(BaseModel):
         orm_mode: True
 
 
-class VerseTopic(BaseModel):
-    id: int
-    topic_id: int
-    verse_id: int
-
-    class Config:
-        orm_mode: True
-
-
 class Topic(BaseModel):
     id: int
     en_title: str
     id_title: str
-    topic_verses: List[VerseTopic] = []
 
     class Config:
         orm_mode: True
 
+
+class VerseTopic(Topic):
+    id: int
+    verses: List[Verse] = []
+
+    class Config:
+        orm_mode: True
