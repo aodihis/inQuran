@@ -1,0 +1,22 @@
+meta {
+  name: Verse Topic
+  type: graphql
+  seq: 5
+}
+
+post {
+  url: 127.0.0.1:8000/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  {
+  
+    topics{
+      id,
+      enTitle,
+      idTitle
+    }
+  }
+}

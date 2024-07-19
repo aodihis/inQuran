@@ -19,7 +19,7 @@ async def get_verse(db: AsyncSession, surah_number: int, verse_number: int):
     return verse
 
 
-async def get_surah(db: AsyncSession, surah_number: int):
+async def get_surah(db: AsyncSession, surah_number: int) -> Surah:
     statement = (select(Surah)
                  .where(Surah.id == surah_number))
     surah: Surah = (await db.execute(statement)).scalar()

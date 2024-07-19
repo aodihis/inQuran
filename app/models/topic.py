@@ -3,8 +3,8 @@ from sqlalchemy.orm import relationship
 from app.database.model import Base
 
 verse_topic = Table('verse_topic', Base.metadata,
-                    Column('topic_id', Integer, ForeignKey('topic.id'), primary_key=True),
-                    Column('verse_id', Integer, ForeignKey('verse.id'), primary_key=True)
+                    Column('topic_id', Integer, ForeignKey('topic.id'), primary_key=False),
+                    Column('verse_id', Integer, ForeignKey('verse.id'), primary_key=False)
                     )
 
 

@@ -1,0 +1,24 @@
+meta {
+  name: Verse
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: 127.0.0.1:8000/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  {
+    surah(surahNumber:2){
+      id
+      numberOfVerse
+      idTranslation
+      verses {
+        latin
+      }
+    }
+  }
+}

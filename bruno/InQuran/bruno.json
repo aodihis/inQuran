@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "InQuran",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

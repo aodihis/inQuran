@@ -32,6 +32,6 @@ for x in d['topics']:
                 'ayat' : [a for a in range(start_ayat, end_ayat+1)],
                 'topic': x['name']
             })
-with open('results/topics-quran.json', 'w') as f:
+with open('results/v2-topics-quran.json', 'w') as f:
     json.dump(ayah, f)
 
